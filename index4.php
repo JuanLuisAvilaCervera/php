@@ -7,7 +7,7 @@
     function get_room_by_id($room){
         $selectedId = $_GET["id"];
 
-        return $room->room_id == $selectedId;
+        return $room->idroom == $selectedId;
     }
 
         
