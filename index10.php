@@ -1,10 +1,14 @@
 <?php 
-
-    use eftec\bladeone\BladeOne;
+require __DIR__ . '/vendor/autoload.php';
+use eftec\bladeone\BladeOne;
 
     $views = __DIR__ . '/views';
     $cache = __DIR__ . '/cache';
     $blade = new BladeOne($views,$cache,BladeOne::MODE_DEBUG); // MODE_DEBUG allows to pinpoint troubles.
-    echo $blade->run("hello",array("variable1"=>"value1"));
 
-?>
+    $json = file_get_contents("./Rooms.json");
+    $roomArray = json_decode($json);
+
+    echo $blade->run("rooms", ["Rooms" => $roomArray])
+
+  ?>

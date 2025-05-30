@@ -1,17 +1,16 @@
-<?php 
 
-$json = file_get_contents("./Rooms.json");
-  $roomArray = json_decode($json);
-    
-
-  @for($i = 0 ; $i < count($roomArray) ; $i++)
-    echo "<ol>";
-
-    @foreach ($roomArray[i] as $value)
-
-        echo "<li>{$key}: {$value}</li>";
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <ol>
+    @foreach ($Rooms as $room)
+      <li>{{$room->room_type}}</li>
     @endforeach
-
-    echo "</ol>";
-  @endfor
-?>
+  </ol>
+</body>
+</html>

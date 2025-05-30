@@ -1,5 +1,4 @@
 
-<form method="post"><input type="submit" value="Send" name="submit"></form>
 
 
 <?php
@@ -10,7 +9,8 @@
     exit();
     }
 
-    
+
+    echo '<form method="post"><input type="submit" value="Send" name="submit"></form>';
 
 
     if(isset($_POST["submit"])){ 
